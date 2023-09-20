@@ -1,0 +1,50 @@
+# Dependencies 
+node_modules
+
+# Build artifacts
+dist/
+*.map
+
+# Logs and backups
+npm-debug.log*
+*.log
+*.backup
+
+# Environment variables
+.env
+.env.production 
+
+# Editor artifacts
+.idea/
+.vscode/
+
+# OS artifacts
+Thumbs.db
+.DS_Store
+
+# Tests
+/coverage/
+/test/unit/coverage/
+
+# Production build
+/build
+
+# Misc
+*.swp
+*.tmp
+*.cache
+*.swo
+
+# Yarn
+.yarn-integrity
+.pnp.*
+.yarn*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Lockfiles
+package-lock.json
+yarn.lock
