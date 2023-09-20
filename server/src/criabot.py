@@ -4,15 +4,13 @@ from alpaca.trading.requests import MarketOrderRequest
 from alpaca.trading.enums import OrderSide, TimeInForce
 from dotenv import load_dotenv
 
-class Cria:
+class CriaBot:
     def __init__(self) -> None:
         pass
 
 
 load_dotenv('./src/keys.env')
 trading_client = TradingClient(os.getenv("ALPACA_PK"), os.getenv("ALPACA_SK"), paper=True)
-
-              
 account = trading_client.get_account()
 assets = trading_client.get_asset("AAPL")
 

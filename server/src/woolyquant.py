@@ -73,9 +73,9 @@ class SmartPair:
 
             # For loop runs until EOF for ea. file. --- Big-O: O(n)
             # We convert from Dataframe to series for ea. file
-            ticker = f'{file}'.split('.csv')[0]
+            instrument = f'{file}'.split('.csv')[0]
 
-            self.equity_info[ticker] = df
+            self.equity_info[instrument] = df
 
             # Pulls in the adj close price in percentage form
             percent_data = df['Adj Close'].pct_change().dropna() * 100
@@ -84,15 +84,15 @@ class SmartPair:
             value_data = df['Adj Close'].dropna()
             
             # Calculates standard deviation of Adj Close values, removes any NaN values, and rounds to 4 decimal places
-            self.std_dev[ticker] = percent_data.std()
+            self.std_dev[instrument] = percent_data.std()
 
             # We then store the value in list form and round to pretty our data
-            self.percent_return[ticker] = percent_data.to_numpy()
-            self.price_return[ticker] = value_data.to_numpy()
+            self.percent_return[instrument] = percent_data.to_numpy()
+            self.price_return[instrument] = value_data.to_numpy()
 
             # Then we calculate the mean percentage as part of the covariance
-            self.mean_percent_return[ticker] = percent_data.mean()
-            self.mean_price_return[ticker] = value_data.mean()
+            self.mean_percent_return[instrument] = percent_data.mean()
+            self.mean_price_return[instrument] = value_data.mean()
     
     # NOTE: Returns an aligned time series list of stock pairs, where [0] is the left_equity and [1] is the right_equity 
     def align_time_series(self, left_equity, right_equity) -> list:
@@ -120,6 +120,7 @@ def main():
              "BRK-B", "MSFT", "AMZN", "NVDA", "TSLA"]
     
     sp = SmartPair()
+    gpt = ChatGPT()
 
     # Initialize program
     sp.read_csv(ticks)
@@ -162,7 +163,7 @@ def main():
 
                 parameters = f'{pair}: {covariance} {corr} {adf_test[0]} {p_val} {regression_slope} {sp.spread_series[pair]} {sp.mean_price_return[left]} {sp.mean_price_return[right]}'
                 print(parameters)
-                # chatGPT_conversation(pair=pair, parameters=parameters)
+                # gpt.chatGPT_conversation(pair=pair, parameters=parameters)
                 
                 # Price
                 numpy.savetxt(f'./res/data/stocks/{left}-price-series.csv', sp.price_return[left], delimiter=",")
