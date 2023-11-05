@@ -1,6 +1,0 @@
-.vscode
-./src/build
-./res/*
-./extern/*
-*.env
-.metals
