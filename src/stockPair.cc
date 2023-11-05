@@ -21,7 +21,6 @@ float calculateCovariance(u_int32_t sampleSize, pybind11::array_t<float> returnP
     for (u_int32_t i = 1; i < sampleSize; i++) {
         float percentA = ptrA[i];
         float percentB = ptrB[i];
-
         sigma += ((percentA - averagePercentA) * (percentB - averagePercentB));
     }
 
@@ -48,9 +47,9 @@ float calculateAverageSpread(u_int32_t sampleSize, pybind11::array_t<float> retu
 
 // }
 
-PYBIND11_MODULE(stock_pair, stock_pair) {
-    stock_pair.doc() = "pybind11 plugin to speed up calculations for Covariance, Correlation, and Cointegration.";
-    stock_pair.def("calculateCovariance", &calculateCovariance, "A function which calculates the covariance between two stocks");
-    stock_pair.def("calculateAverageSpread", &calculateAverageSpread, "Function to calculate the average spread price over a time series between two stocks");
+PYBIND11_MODULE(stockPair, stockPair) {
+    stockPair.doc() = "pybind11 plugin to speed up calculations for Covariance, Correlation, and Cointegration.";
+    stockPair.def("calculateCovariance", &calculateCovariance, "A function which calculates the covariance between two stocks");
+    stockPair.def("calculateAverageSpread", &calculateAverageSpread, "Function to calculate the average spread price over a time series between two stocks");
     // stock_pair.def("generateStockPairs", &generateStockPairs, "Takes in ");
 }

@@ -1,5 +1,5 @@
 setuptools
-pandas
+pandas>=1.5.3
 pandas_datareader
 openai 
 yfinance
@@ -10,4 +10,6 @@ statsmodels
 python-dotenv
 alpaca-py
 psycopg2
-requests
+pydantic
+pytest
+lean
