@@ -1,0 +1,40 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "woolyquant"
+version = "0.0.1"
+description = "Your project description"
+authors = ["Jonathan Ong <gradyjonathan55@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+setuptools = "*"
+yfinance = "*"
+pandas = ">=1.5.*"
+pandas_datareader = "*"
+openai = "*"
+pybind11 = "*"
+cmake = "*"
+statsmodels = "*"
+numpy = "*"
+cython = "*"
+python-dotenv = "*"
+alpaca-py = "*"
+psycopg2 = "*"
+pydantic = "*"
+instructor = "*"
+plaid-python = "*"
+pytest = "*"
+lean = "*"
+
+[tool.poetry.dev-dependencies]
+aiohttp=">=3.8.2"
+yarl=">=1.8.1"
+frozenlist=">=1.3.1"
+blosc2=">=2.0.0"
+
+# [build-system]
+# requires = ["poetry-core>=1.0.0"]
+# build-backend = "poetry.core.masonry.api"

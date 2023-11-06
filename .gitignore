@@ -83,8 +83,11 @@ target/
 profile_default/
 ipython_config.py
 
-# env files
+# Env files
 *.env
+
+# Ignore our res file
+res/*
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is

@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM python:3.11-slim
 
 RUN apt-get update \
     && apt-get install --assume-yes --no-install-recommends --quiet python3 python3-venv libpq-dev python3-dev python3-pip pybind11-dev cmake git g++ python3-psycopg2 \
@@ -21,4 +21,4 @@ RUN g++ -O2 -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` ./src/stoc
 # RUN git submodule update --init
 RUN cmake 
 
-CMD [ "python3", "./src/smart_pair.py" ]
+CMD [ "python3", "./src/woolyquant.py" ]
