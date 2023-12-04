@@ -1,40 +1,30 @@
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
 [tool.poetry]
-name = "woolyquant"
-version = "0.0.1"
-description = "Your project description"
-authors = ["Jonathan Ong <gradyjonathan55@gmail.com>"]
+name = "smart-pairs"
+version = "0.1.0"
+description = ""
+authors = ["Jonathan Grady Ong <gradyjonathan55@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.10"
-setuptools = "*"
-yfinance = "*"
-pandas = ">=1.5.*"
-pandas_datareader = "*"
-openai = "*"
-pybind11 = "*"
-cmake = "*"
-statsmodels = "*"
-numpy = "*"
-cython = "*"
-python-dotenv = "*"
-alpaca-py = "*"
-psycopg2 = "*"
-pydantic = "*"
-instructor = "*"
-plaid-python = "*"
-pytest = "*"
-lean = "*"
+python = ">=3.10,<3.12"
+openai = "^1.3.5"
+yfinance = "^0.2.32"
+numpy = "^1.26.2"
+statsmodels = "^0.14.0"
+python-dotenv = "^1.0.0"
+streamlit-authenticator = "^0.2.3"
+streamlit = "^1.28.2"
+plotly = "^5.18.0"
+bcrypt = "^4.0.1"
+streamlit-extras = "^0.3.5"
+sqlalchemy = "^2.0.23"
+mysqlclient = "^2.2.0"
+matplotlib = "^3.8.2"
+alpaca-py = "^0.13.3"
+lumibot = "^2.9.3"
+pandas = "<=2.0.3"
+pandas-datareader = "^0.10.0"
 
-[tool.poetry.dev-dependencies]
-aiohttp=">=3.8.2"
-yarl=">=1.8.1"
-frozenlist=">=1.3.1"
-blosc2=">=2.0.0"
-
-# [build-system]
-# requires = ["poetry-core>=1.0.0"]
-# build-backend = "poetry.core.masonry.api"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
