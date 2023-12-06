@@ -14,7 +14,6 @@ import psycopg2
 from pandas_datareader import data as pdr
 from statsmodels.regression.linear_model import OLS
 from statsmodels.tsa.stattools import adfuller
-from dotenv import load_dotenv # We will deprecate this once we integrate AWS KMS
 
 # Local Files
 # from bindings import stockPair

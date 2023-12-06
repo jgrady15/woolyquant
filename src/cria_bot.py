@@ -9,15 +9,15 @@ class CriaBot:
         pass
 
 
-load_dotenv('./src/keys.env')
+load_dotenv('keys.env')
 trading_client = TradingClient(os.getenv("ALPACA_PK"), os.getenv("ALPACA_SK"), paper=True)
 account = trading_client.get_account()
 assets = trading_client.get_asset("AAPL")
 
 if assets.tradable:
     market_order_data = MarketOrderRequest(
-                        symbol="AAPL",
-                        qty=1,
+                        symbol="DPZ",
+                        qty=10,
                         side=OrderSide.BUY,
                         time_in_force=TimeInForce.DAY
                         )
